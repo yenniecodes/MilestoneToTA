@@ -514,7 +514,9 @@ public class PayslipFrame extends javax.swing.JDialog {
                 closebtnActionPerformed(evt);
             }
         });
-        jPanel5.add(closebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 70, 30));
+        jPanel5.add(closebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 70, 30));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon("C:\\Users\\Yennie\\Downloads\\PayslipFrame (1).png")); // NOI18N
         jPanel5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 600));
 
         jTabbedPane1.addTab("Payslip", jPanel5);

@@ -14,10 +14,12 @@ Frames\MainFrame$1.class
 Frames\ViewRecordFrame$3.class
 Frames\LeaveFrame$4.class
 Frames\DeleteRecordFrame.class
+Frames\EmployeeLoginFrame$1.class
 Frames\MainFrame$6.class
 Frames\LogInFrame$1.class
 Frames\AddEmployeeFrame$2.class
 Frames\PayslipFrame$4.class
+Frames\LogInFrame$6.class
 Frames\AddEmployeeFrame$1.class
 Frames\LeaveFrame$1.class
 Frames\LogInFrame$2.class
@@ -30,6 +32,7 @@ Frames\LeaveFrame$3.class
 Frames\MainFrame$4.class
 Frames\PayslipFrame$2.class
 Frames\MainFrame$7.class
+Frames\EmployeeLoginFrame.class
 Frames\LogInFrame$5.class
 Frames\PayslipFrame$3.class
 com\mycompany\motorphgui2\Employees.class
