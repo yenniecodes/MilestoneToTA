@@ -36,11 +36,16 @@ public class LogInFrame extends javax.swing.JFrame {
         pwtf = new javax.swing.JPasswordField();
         loginbtn = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
+        EmployeeLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(900, 900));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setMinimumSize(new java.awt.Dimension(500, 500));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usernametf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -49,7 +54,7 @@ public class LogInFrame extends javax.swing.JFrame {
 
         pwtf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         pwtf.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), null));
-        jPanel1.add(pwtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 310, 30));
+        jPanel1.add(pwtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, 310, 30));
 
         loginbtn.setBackground(new java.awt.Color(0, 0, 0));
         loginbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -66,7 +71,7 @@ public class LogInFrame extends javax.swing.JFrame {
                 loginbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 570, 360, 40));
+        jPanel1.add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 590, 360, 40));
 
         exitbtn.setBackground(new java.awt.Color(153, 153, 255));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -83,22 +88,23 @@ public class LogInFrame extends javax.swing.JFrame {
                 exitbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 630, 20, 20));
+        jPanel1.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 750, 20, 20));
 
+        EmployeeLogin.setText("Login as Employee");
+        EmployeeLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeeLoginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EmployeeLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 750, -1, -1));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Yennie\\Downloads\\LOGIN INTERFACE (1).png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 900));
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Yennie\\Downloads\\Sign up.png")); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -137,6 +143,14 @@ public class LogInFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginbtnActionPerformed
 
+    private void EmployeeLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeLoginActionPerformed
+        // TODO add your handling code here:
+        EmployeeLoginFrame log2 = new EmployeeLoginFrame();
+        log2.show();
+        
+       dispose();
+    }//GEN-LAST:event_EmployeeLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -173,9 +187,11 @@ public class LogInFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EmployeeLogin;
     private javax.swing.JButton exitbtn;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton loginbtn;
     private javax.swing.JPasswordField pwtf;
     private javax.swing.JTextField usernametf;
