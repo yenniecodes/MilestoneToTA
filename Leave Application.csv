@@ -1,13 +1,13 @@
-"Date Filed:","June 30 2022"
-"Employee Number:","10001"
-"Last Name:","Crisostomo"
-"First Name:","Jose"
-"Type of Leave Applied:","Sick Leave"
-"Number of Days:","1"
-"Start Date:","7/4/2022"
-"End Date:","7/7/2022"
-"Application Status:","Approved"
-"Remarks:",""
-"Remaining Sick Leave:","4"
-"Remaining Vacation Leave","10"
-"Remaining Emergency Leave:","5"
+Date Filed:,June 30 2022
+Employee Number:,10001
+Last Name:,Crisostomo
+First Name:,Jose
+Type of Leave Applied:,Sick Leave
+Number of Days:,3
+Start Date:,5/6/2022
+End Date:,5/9/2022
+Application Status:,Approved
+Remarks:,
+Remaining Sick Leave:,2
+Remaining Vacation Leave,7
+Remaining Emergency Leave:,5

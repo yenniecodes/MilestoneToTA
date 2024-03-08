@@ -4,13 +4,13 @@
  */
 package Frames;
 
-import com.mycompany.OOP.LeaveManagement.LeaveFrame;
-import com.mycompany.OOP.EmployeeVerification.ViewRecordFrame;
-import com.mycompany.OOP.EmployeeVerification.AddEmployeeFrame;
-import com.mycompany.OOP.EmployeeVerification.DeleteRecordFrame;
-import com.mycompany.OOP.PayrollCalculation.PayslipFrame;
+import com.mycompany.CP2.LeaveManagement.LeaveFrame;
+import com.mycompany.CP2.EmployeeVerification.ViewRecordFrame;
+import com.mycompany.CP2.EmployeeVerification.AddEmployeeFrame;
+import com.mycompany.CP2.EmployeeVerification.DeleteRecordFrame;
+import com.mycompany.CP2.PayrollCalculation.PayslipFrame;
 import com.mycompany.OOP.UserManagement.LogInFrame;
-import com.mycompany.OOP.EmployeeVerification.Employees;
+import com.mycompany.CP2.EmployeeVerification.Employees;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileNotFoundException;
@@ -95,7 +95,7 @@ public class MainFrame extends javax.swing.JDialog {
             table1.getColumnModel().getColumn(0).setPreferredWidth(100);
         }
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 720, 310));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 870, 180));
 
         viewbtn.setBackground(new java.awt.Color(0, 0, 102));
         viewbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -107,7 +107,7 @@ public class MainFrame extends javax.swing.JDialog {
                 viewbtnMouseClicked(evt);
             }
         });
-        jPanel2.add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 160, 30));
+        jPanel2.add(viewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 160, 30));
 
         addbtn.setBackground(new java.awt.Color(0, 0, 102));
         addbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -119,7 +119,7 @@ public class MainFrame extends javax.swing.JDialog {
                 AddEmployee(evt);
             }
         });
-        jPanel2.add(addbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 161, 30));
+        jPanel2.add(addbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 161, 30));
 
         payslipbtn.setBackground(new java.awt.Color(0, 0, 102));
         payslipbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -131,7 +131,7 @@ public class MainFrame extends javax.swing.JDialog {
                 PaySlip(evt);
             }
         });
-        jPanel2.add(payslipbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 161, 30));
+        jPanel2.add(payslipbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 161, 30));
 
         leavebtn.setBackground(new java.awt.Color(0, 0, 102));
         leavebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -143,7 +143,7 @@ public class MainFrame extends javax.swing.JDialog {
                 leavebtnMouseClicked(evt);
             }
         });
-        jPanel2.add(leavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 161, 30));
+        jPanel2.add(leavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 161, 30));
 
         deletebtn.setBackground(new java.awt.Color(0, 0, 102));
         deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -155,9 +155,9 @@ public class MainFrame extends javax.swing.JDialog {
                 DeleteRecord(evt);
             }
         });
-        jPanel2.add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 161, 30));
+        jPanel2.add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 161, 30));
 
-        exitbtn.setBackground(new java.awt.Color(0, 0, 102));
+        exitbtn.setBackground(new java.awt.Color(153, 0, 0));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         exitbtn.setForeground(new java.awt.Color(255, 255, 255));
         exitbtn.setText("Exit");
@@ -167,7 +167,7 @@ public class MainFrame extends javax.swing.JDialog {
                 exitbtnMouseClicked(evt);
             }
         });
-        jPanel2.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 161, 30));
+        jPanel2.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 161, 30));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

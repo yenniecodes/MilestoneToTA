@@ -4,9 +4,13 @@
  */
 package Frames;
 
-
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import com.mycompany.OOP.UserManagement.EmployeeLogInFrame;
-import com.mycompany.OOP.EmployeeVerification.Employees;
+import com.mycompany.CP2.EmployeeVerification.Employees;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileNotFoundException;
@@ -18,7 +22,6 @@ import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDateTime;
 
 
@@ -27,6 +30,12 @@ import java.time.LocalDateTime;
  * @author Yennie
  */
 public class EmployeeMainFrame extends javax.swing.JDialog {
+    private String authenticatedUsername; // This should be the only username variable in this class.
+   
+    public EmployeeMainFrame() throws IOException, FileNotFoundException, CsvValidationException {
+        initComponents();
+        setLocationRelativeTo(null);
+    }
 
     /**
      * Creates new form MainFrame
@@ -34,11 +43,17 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
      * @throws java.io.FileNotFoundException
      * @throws com.opencsv.exceptions.CsvValidationException
      */
-    public EmployeeMainFrame() throws IOException, FileNotFoundException, CsvValidationException {
+    
+    public EmployeeMainFrame(String username) {
+        this.authenticatedUsername = username; // Initialize authenticatedUsername with the passed username.
         initComponents();
         setLocationRelativeTo(null);
-    }
-
+        
+   
+   
+    
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,53 +64,67 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        TimeInBt = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         TimeOutBt = new javax.swing.JButton();
+        TimeInBt = new javax.swing.JButton();
+        LogOutEmp = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, -1, -1));
 
-        TimeInBt.setText("Time In");
-        TimeInBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TimeInBtActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TimeOutBt.setBackground(new java.awt.Color(0, 0, 102));
+        TimeOutBt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TimeOutBt.setForeground(new java.awt.Color(255, 255, 255));
         TimeOutBt.setText("Time Out");
         TimeOutBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TimeOutBtActionPerformed(evt);
             }
         });
+        jPanel1.add(TimeOutBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 287, 110, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(TimeInBt)
-                        .addGap(50, 50, 50)
-                        .addComponent(TimeOutBt)))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TimeInBt)
-                    .addComponent(TimeOutBt))
-                .addGap(168, 168, 168))
-        );
+        TimeInBt.setBackground(new java.awt.Color(0, 0, 102));
+        TimeInBt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TimeInBt.setForeground(new java.awt.Color(255, 255, 255));
+        TimeInBt.setText("Time In");
+        TimeInBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TimeInBtActionPerformed(evt);
+            }
+        });
+        jPanel1.add(TimeInBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 287, 100, 40));
+
+        LogOutEmp.setBackground(new java.awt.Color(0, 0, 102));
+        LogOutEmp.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        LogOutEmp.setForeground(new java.awt.Color(255, 255, 255));
+        LogOutEmp.setText("Log Out");
+        LogOutEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogOutEmpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(LogOutEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setText("Welcome!");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Yennie\\Downloads\\empframe.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, -40, 650, 490));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,10 +138,19 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
         // TODO add your handling code here:
         timeOut();
     }//GEN-LAST:event_TimeOutBtActionPerformed
+
+    private void LogOutEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutEmpActionPerformed
+        // TODO add your handling code here:
+    EmployeeLogInFrame employeeLoginFrame = new EmployeeLogInFrame();
+    employeeLoginFrame.setVisible(true);
+    
+    // Optionally, if you want to hide or dispose the current LoginFrame, you can call:
+     this.dispose(); // to close the current frame
+    }//GEN-LAST:event_LogOutEmpActionPerformed
     private void timeIn() {
         String formattedTime = LocalDateTime.now().toString();
         try {
-            writeToCSV("username", formattedTime, "IN"); // Replace "username" with actual username
+            writeToCSV(authenticatedUsername, formattedTime, "IN"); // Use authenticatedUsername here
             JOptionPane.showMessageDialog(this, "Clocked in at: " + formattedTime);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error writing to CSV: " + e.getMessage());
@@ -122,19 +160,29 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
     private void timeOut() {
         String formattedTime = LocalDateTime.now().toString();
         try {
-            writeToCSV("username", formattedTime, "OUT"); // Replace "username" with actual username
+            writeToCSV(authenticatedUsername, formattedTime, "OUT"); // Use authenticatedUsername here
             JOptionPane.showMessageDialog(this, "Clocked out at: " + formattedTime);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error writing to CSV: " + e.getMessage());
         }
-    }
+}
 
-    private void writeToCSV(String username, String time, String type) throws IOException {
-        try (FileWriter writer = new FileWriter("time_data.csv", true)) {
-            writer.write(username + "," + time + "," + type + "\n");
-            writer.flush();
-        }
+// You'll need to implement the writeToCSV method if it doesn't exist already.
+private void writeToCSV(String username, String formattedTime, String type) throws IOException {
+    // The path to the CSV file
+    Path csvFilePath = Paths.get("time_data.csv");
+
+    // Using try-with-resources to ensure the writer is closed after use
+    try (BufferedWriter writer = Files.newBufferedWriter(csvFilePath, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
+        // Create a new line with the user data
+        String line = String.join(",", username, formattedTime, type);
+
+        // Write the line to the CSV file
+        writer.write(line);
+        writer.newLine(); // This adds a new line after the record
     }
+}
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -173,8 +221,12 @@ public class EmployeeMainFrame extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LogOutEmp;
     private javax.swing.JButton TimeInBt;
     private javax.swing.JButton TimeOutBt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
