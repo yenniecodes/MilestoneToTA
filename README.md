@@ -1,3 +1,3 @@
-# OOP
-Updated Version of OOP MS2
-Group 7
+# CP2
+Updated Version of CP2
+Group 2
